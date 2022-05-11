@@ -1,6 +1,6 @@
 # <img align="right" width=64 src="https://user-images.githubusercontent.com/58488209/167823474-1e756f0e-8ede-49bf-8d4b-5b470fddd43d.png"> pyFin-Sentiment
 
-[![Documentation Status](https://readthedocs.org/projects/pyfin-sentiment/badge/?version=latest)](https://pyfin-sentiment.readthedocs.io/en/latest/?badge=latest) [![CI](https://github.com/moritzwilksch/pyfin-sentiment/actions/workflows/main.yml/badge.svg)](https://github.com/moritzwilksch/pyfin-sentiment/actions/workflows/main.yml)
+[![Documentation Status](https://readthedocs.org/projects/pyfin-sentiment/badge/?version=latest)](https://pyfin-sentiment.readthedocs.io/en/latest/?badge=latest) [![CI (tests)](https://github.com/moritzwilksch/pyfin-sentiment/actions/workflows/main.yml/badge.svg)](https://github.com/moritzwilksch/pyfin-sentiment/actions/workflows/main.yml)
 
 > A library for sentiment analysis of financial social media posts
 
