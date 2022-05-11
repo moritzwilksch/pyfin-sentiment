@@ -1,2 +1,33 @@
-# pyfin-sentiment
-A library for sentiment analysis of financial social media posts
+# <img align="right" width=64 src="https://user-images.githubusercontent.com/58488209/167823474-1e756f0e-8ede-49bf-8d4b-5b470fddd43d.png"> pyFin-Sentiment
+
+[![Documentation Status](https://readthedocs.org/projects/pyfin-sentiment/badge/?version=latest)](https://pyfin-sentiment.readthedocs.io/en/latest/?badge=latest)
+
+> A library for sentiment analysis of financial social media posts
+
+**IMPORTANT: This library is a WIP. Expect completion by September 2022 :)**
+
+## Sentiment Analysis of Financial Social Media Posts
+*This section is a WIP*
+
+## Example
+*This section is a WIP*
+
+## Documentation
+*This section is a WIP*
+
+
+
+## Citation
+If you use the library, please cite it:
+
+> Wilksch, M. (2022). pyFin-Sentiment: a library for sentiment analysis of financial social media posts. `https://github.com/moritzwilksch/pyfin-sentiment`
+
+
+```latex
+@misc{pyfin-sentiment,
+  author={Wilksch, Moritz},
+  title={pyFin-Sentiment: a library for sentiment analysis of financial social media posts},
+  year={2022},
+  howpublished={\url{https://github.com/moritzwilksch/pyfin-sentiment}}
+}
+```
