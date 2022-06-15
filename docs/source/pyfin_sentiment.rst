@@ -12,14 +12,6 @@ pyfin\_sentiment.model module
    :undoc-members:
    :show-inheritance:
 
-pyfin\_sentiment.preprocessing module
--------------------------------------
-
-.. automodule:: pyfin_sentiment.preprocessing
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
