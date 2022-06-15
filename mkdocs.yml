@@ -1,0 +1,16 @@
+site_name: pyFin Sentiment
+
+theme:
+  name: "readthedocs"
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: false
+            separate_signature: true
+            docstring_section_style: table
+
+
+  - search
