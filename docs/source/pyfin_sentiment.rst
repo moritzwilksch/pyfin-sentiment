@@ -4,14 +4,6 @@ pyfin\_sentiment package
 Submodules
 ----------
 
-pyfin\_sentiment.demo module
-----------------------------
-
-.. automodule:: pyfin_sentiment.demo
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pyfin\_sentiment.model module
 -----------------------------
 

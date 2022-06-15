@@ -1,5 +1,5 @@
-src
-===
+pyfin_sentiment
+===============
 
 .. toctree::
    :maxdepth: 4
