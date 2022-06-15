@@ -5,3 +5,7 @@ install:
 
 test:
 	pytest tests/
+
+format:
+	black .
+	isort .
