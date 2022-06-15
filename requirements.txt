@@ -1,1 +1,6 @@
 pytest
+black
+isort
+toml
+joblib
+scikit-learn
