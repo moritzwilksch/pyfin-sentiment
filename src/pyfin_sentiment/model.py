@@ -39,6 +39,9 @@ class SentimentModel:
 
         Raises:
             ValueError: When you try to instanciate a model that does not exist.
+
+        Tip:
+            If downloading or loading the model fails with the implicit cache_dir, try setting cache_dir to a writable directory that already exists.
         """
 
         if model_name not in self.AVAILABLE_MODELS:
