@@ -4,3 +4,4 @@ isort
 toml
 joblib
 scikit-learn
+polars

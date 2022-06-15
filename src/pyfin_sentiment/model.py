@@ -1,8 +1,13 @@
 import os
 import pathlib
 import urllib.request
+from typing import Union
 
 import joblib
+import numpy as np
+import polars as pl
+
+from pyfin_sentiment.preprocessing import Preprocessor
 
 
 class SentimentModel:
@@ -50,6 +55,7 @@ class SentimentModel:
         model_path = self.cache_dir / self.NAME_FILE_MAPPING[model_name]
 
         self.model = joblib.load(model_path)
+        self.preprocessor = Preprocessor()
 
     @staticmethod
     def _create_get_cache_dir():
@@ -109,3 +115,48 @@ class SentimentModel:
         )
 
         print(f"Model downloaded to {cache_dir / cls.NAME_FILE_MAPPING[model_name]}")
+
+    def predict(self, texts: Union[list, np.ndarray]) -> np.ndarray:
+        """
+        Predict sentiment class from raw texts. No prior preprocessing is necessary as it will be done internally.
+
+        Args:
+            texts (Union[list, np.ndarray]): Input texts
+
+        Returns:
+            np.ndarray: Predicted sentiment class for each text. "1" = positive, "2" = neutral, "3" = negative.
+        """
+        if not isinstance(texts, list) or isinstance(texts, np.ndarray):
+            raise ValueError(
+                f"Please provide a list or np.ndarray of texts. Got {type(texts)}."
+            )
+
+        df = pl.DataFrame(texts, columns=["text"])
+        df = self.preprocessor.process(df)
+
+        return self.model.predict(df["text"].to_list())
+
+    def predict_proba(self, texts: Union[list, np.ndarray]) -> np.ndarray:
+        """
+        Predict sentiment class probabilites from raw texts. No prior preprocessing is necessary as it will be done internally.
+
+        Args:
+            texts (Union[list, np.ndarray]): Input texts
+
+        Returns:
+            np.ndarray: Predicted sentiment class probabilities p for each text. p[:, 0] = positive, p[:, 1] = neutral, p[:, 2] = negative.
+        """
+        if not isinstance(texts, list) or isinstance(texts, np.ndarray):
+            raise ValueError(
+                f"Please provide a list or np.ndarray of texts. Got {type(texts)}."
+            )
+
+        df = pl.DataFrame(texts, columns=["text"])
+        df = self.preprocessor.process(df)
+
+        return self.model.predict_proba(df["text"].to_list())
+
+
+if __name__ == "__main__":
+    model = SentimentModel("small")
+    print(model.predict_proba(["long $AAPL", "sell $TSLA", "I became a millinoaire"]))
