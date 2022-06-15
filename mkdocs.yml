@@ -10,7 +10,6 @@ plugins:
           options:
             show_source: false
             separate_signature: true
-            docstring_section_style: table
-
+            show_signature_annotations: true
 
   - search

@@ -8,6 +8,8 @@
 - If you are looking for a sentiment analysis models that excels on new headlines sentiment analysis, check out [FinBERT](https://huggingface.co/ProsusAI/finbert)
 - Otherwise, stay here 🙃
 
+
+### Sentiment Labels
 We use the following conventions for mapping sentiment classes:
 
 | Class Name | Meaning |
@@ -15,6 +17,14 @@ We use the following conventions for mapping sentiment classes:
 |1| Positive, Bullish |
 |2| Neutral, Uncertain |
 |3| Negative, Bearish |
+
+### Models
+
+For now, we support the following models. You'll need to specify the correct `model_name` when downloading and loading models.
+
+| `model_name` | Description |
+| --- | ---
+| `"small"` | A logistic regression trained on the TF-IDF representation of the sub-word tokenized texts |
 
 ## MWE
 A minimum working example for the impatient:
@@ -33,3 +43,6 @@ model.predict(["Long $TSLA!!", "Selling my $AAPL position"])
 ## The `SentimentModel` class
 There's actually only one class you'll really need: the [SentimentModel](SentimentModel.md) class
 
+
+## About
+This library was developed by [me (Moritz Wilksch)](https://github.com/moritzwilksch) as part of my master thesis. If you experience any issues feel free to raise them at [the project's GitHub repo](https://github.com/moritzwilksch/pyfin-sentiment).

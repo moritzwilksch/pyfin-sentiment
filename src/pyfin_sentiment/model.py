@@ -12,7 +12,7 @@ from pyfin_sentiment.preprocessing import Preprocessor
 
 class SentimentModel:
     """
-    The pyFin-sentiment model class. Use this to download the model with SentimentModel.download(...) and instanciate it using SentimentModel(model_name).
+    The pyFin-sentiment model class. Use this to download the model with `SentimentModel.download(...)` and instanciate it using `SentimentModel(model_name)`.
 
     Raises:
         ValueError: When you try to instanciate a model that does not exist.
@@ -31,7 +31,7 @@ class SentimentModel:
 
     def __init__(self, model_name: str = "small", cache_dir: str = None):
         """
-        Initialize a pyFin-sentiment model by name. The model artifact needs to be downloaded first using SentimentModel.download(...).
+        Initialize a pyFin-sentiment model by name. The model artifact needs to be downloaded first using `SentimentModel.download(model_name)`.
 
         Args:
             model_name (str, optional): Model name, one of: ["small"]. Valid names are also listed in SentimentModel.AVAILABLE_MODELS. Defaults to "small".
@@ -63,7 +63,7 @@ class SentimentModel:
     @staticmethod
     def _create_get_cache_dir():
         """
-        Get path to default cache directory. Tries to create ~/.cache/pyfin-sentiment if it does not exist.
+        Get path to default cache directory. Tries to create `~/.cache/pyfin-sentiment` if it does not exist.
 
         Returns:
             pathlib.Path: Path to cache directory.
@@ -94,7 +94,7 @@ class SentimentModel:
     @classmethod
     def download(cls, model_name: str = "small", cache_dir: str = None):
         """
-        Download the model artifact into cache_dir.
+        Download the model artifact into `cache_dir`.
 
         Args:
             model_name (str, optional): Model name, one of: ["small"]. Valid names are also listed in SentimentModel.AVAILABLE_MODELS. Defaults to "small".

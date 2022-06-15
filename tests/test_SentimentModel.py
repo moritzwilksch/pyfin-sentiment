@@ -1,6 +1,7 @@
-import pytest
-from pyfin_sentiment.model import SentimentModel
 import numpy as np
+import pytest
+
+from pyfin_sentiment.model import SentimentModel
 
 SentimentModel.download("small")
 model = SentimentModel("small")
@@ -30,4 +31,6 @@ def test_predict(text: str, prediction: str):
 def test_predict_proba(text: str):
     pred = model.predict_proba([text])
     assert pred.shape == (1, 3)
-    np.testing.assert_array_almost_equal(pred.sum(axis=1), np.array([1.0]), verbose=True)
+    np.testing.assert_array_almost_equal(
+        pred.sum(axis=1), np.array([1.0]), verbose=True
+    )
