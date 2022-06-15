@@ -13,10 +13,19 @@
 *This section is a WIP*
 
 ## Example
-*This section is a WIP*
+```python
+from pyfin_sentiment.model import SentimentModel
+
+# this only needs to be downloaded once:
+SentimentModel.download("small")  # downloads to ~/.cache/python-sentiment
+
+model = SentimentModel("small")
+model.predict(["Long $TSLA!!", "Selling my $AAPL position"])
+# array(['1', '3'], dtype=object)
+```
 
 ## Documentation
-- The documentation lives on [pyfin-sentiment.readthedocs.io](https://pyfin-sentiment.readthedocs.io/en/latest)
+> 📚 The documentation lives on [pyfin-sentiment.readthedocs.io](https://pyfin-sentiment.readthedocs.io/en/latest)
 
 
 
