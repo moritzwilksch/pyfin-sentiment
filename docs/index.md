@@ -1,5 +1,13 @@
 # 👋 Welcome to the `pyFin-Sentiment` docs!
 
+## Installation
+
+This library requires `python>=3.8`!
+
+```bash
+pip install pyfin-sentiment
+```
+
 ## Before you start...
 - This library is intended for extracting financial *market* sentiment from short-form social media posts like tweets. 
 - Market sentiment is different from general sentiment:
@@ -24,7 +32,7 @@ For now, we support the following models. You'll need to specify the correct `mo
 
 | `model_name` | Description |
 | --- | ---
-| `"small"` | A logistic regression trained on the TF-IDF representation of the sub-word tokenized texts |
+| `"small"` (default) | A logistic regression trained on the TF-IDF representation of the sub-word tokenized texts |
 
 ## MWE
 A minimum working example for the impatient:
@@ -32,7 +40,7 @@ A minimum working example for the impatient:
 from pyfin_sentiment.model import SentimentModel
 
 # this only needs to be downloaded once:
-SentimentModel.download("small")  # downloads to ~/.cache/python-sentiment
+SentimentModel.download("small")
 
 model = SentimentModel("small")
 model.predict(["Long $TSLA!!", "Selling my $AAPL position"])
