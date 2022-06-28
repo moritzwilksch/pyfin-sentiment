@@ -7,8 +7,6 @@
 
 > A library for sentiment analysis of financial social media posts
 
-**IMPORTANT: This library is a WIP. Expect completion by September 2022 :)**
-
 ## Sentiment Analysis of Financial Social Media Posts
 *This section is a WIP*
 
@@ -26,20 +24,3 @@ model.predict(["Long $TSLA!!", "Selling my $AAPL position"])
 
 ## Documentation
 > 📚 The documentation lives on [pyfin-sentiment.readthedocs.io](https://pyfin-sentiment.readthedocs.io/en/latest)
-
-
-
-## Citation
-If you use the library, please cite it:
-
-> Wilksch, M. (2022). pyFin-Sentiment: a library for sentiment analysis of financial social media posts. `https://github.com/moritzwilksch/pyfin-sentiment`
-
-
-```latex
-@misc{pyfin-sentiment,
-  author={Wilksch, Moritz},
-  title={pyFin-Sentiment: a library for sentiment analysis of financial social media posts},
-  year={2022},
-  howpublished={\url{https://github.com/moritzwilksch/pyfin-sentiment}}
-}
-```
