@@ -14,8 +14,8 @@
 ```python
 from pyfin_sentiment.model import SentimentModel
 
-# this only needs to be downloaded once:
-SentimentModel.download("small")  # downloads to ~/.cache/python-sentiment
+# the model only needs to be downloaded once
+SentimentModel.download("small")
 
 model = SentimentModel("small")
 model.predict(["Long $TSLA!!", "Selling my $AAPL position"])
