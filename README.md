@@ -7,39 +7,38 @@
 
 > A library for sentiment analysis of financial social media posts
 
-**IMPORTANT: This library is a WIP. Expect completion by September 2022 :)**
-
 ## Sentiment Analysis of Financial Social Media Posts
-*This section is a WIP*
+This library can help you **extract market sentiment from short social media posts**. Trained on data from Twitter, it can classify sentimetn into **three classes: Bullish, Bearish, Neutral/No Sentiment**.
+Note that we need to differentiate between market sentiment and general sentiment. Consider this example:
+
+> 💬 Nice, already made loads of money this morning and now im shorting $AAPL, let's goooo!
+
+While the general sentiment in the text is positve, the *market sentiment* is negative as the author is shorting a stock.
+Therefore, ...
+- If you are looking for a generic sentiment model that works well on social media content, take a look at [VADER](https://github.com/cjhutto/vaderSentiment) or [TwitterRoBERTa](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
+- If you are looking for a sentiment analysis models that excels on new headlines sentiment analysis, check out [FinBERT](https://huggingface.co/ProsusAI/finbert)
+- Otherwise, stay here 🙃
+
+## Documentation
+> 📚 The documentation lives on [pyfin-sentiment.readthedocs.io](https://pyfin-sentiment.readthedocs.io/en/latest)
 
 ## Example
 ```python
 from pyfin_sentiment.model import SentimentModel
 
-# this only needs to be downloaded once:
-SentimentModel.download("small")  # downloads to ~/.cache/python-sentiment
+# the model only needs to be downloaded once
+SentimentModel.download("small")
 
 model = SentimentModel("small")
 model.predict(["Long $TSLA!!", "Selling my $AAPL position"])
 # array(['1', '3'], dtype=object)
 ```
+We use the following conventions for mapping sentiment classes:
 
-## Documentation
-> 📚 The documentation lives on [pyfin-sentiment.readthedocs.io](https://pyfin-sentiment.readthedocs.io/en/latest)
-
-
-
-## Citation
-If you use the library, please cite it:
-
-> Wilksch, M. (2022). pyFin-Sentiment: a library for sentiment analysis of financial social media posts. `https://github.com/moritzwilksch/pyfin-sentiment`
+| Class Name | Meaning |
+| --- | --- |
+|1| Positive, Bullish |
+|2| Neutral, Uncertain |
+|3| Negative, Bearish |
 
 
-```latex
-@misc{pyfin-sentiment,
-  author={Wilksch, Moritz},
-  title={pyFin-Sentiment: a library for sentiment analysis of financial social media posts},
-  year={2022},
-  howpublished={\url{https://github.com/moritzwilksch/pyfin-sentiment}}
-}
-```
