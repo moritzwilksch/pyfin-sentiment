@@ -129,10 +129,13 @@ class SentimentModel:
         Returns:
             np.ndarray: Predicted sentiment class for each text. "1" = positive, "2" = neutral, "3" = negative.
         """
-        if not isinstance(texts, list) or isinstance(texts, np.ndarray):
+        if not (isinstance(texts, list) or isinstance(texts, np.ndarray)):
             raise ValueError(
                 f"Please provide a list or np.ndarray of texts. Got {type(texts)}."
             )
+
+        if len(texts) == 0:
+            raise ValueError(f"Please provide at least one text. Got {texts}")
 
         df = pl.DataFrame(texts, columns=["text"])
         df = self.preprocessor.process(df)
@@ -158,8 +161,3 @@ class SentimentModel:
         df = self.preprocessor.process(df)
 
         return self.model.predict_proba(df["text"].to_list())
-
-
-if __name__ == "__main__":
-    model = SentimentModel("small")
-    print(model.predict_proba(["long $AAPL", "sell $TSLA", "I became a millinoaire"]))

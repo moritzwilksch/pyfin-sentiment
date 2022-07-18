@@ -21,6 +21,18 @@ def test_predict(text: str, prediction: str):
 
 
 @pytest.mark.parametrize(
+    "fn_input, exception",
+    [
+        ([], ValueError),
+        ("", ValueError),
+    ],
+)
+def test_predict_throws_exception(fn_input, exception):
+    with pytest.raises(exception):
+        model.predict(fn_input)
+
+
+@pytest.mark.parametrize(
     "text",
     [
         ("long $AAPL"),

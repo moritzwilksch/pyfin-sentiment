@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyfin-sentiment",
-    version="0.0.5",
+    version="0.0.6",
     author="Moritz Wilksch",
     author_email="moritzwilksch@gmail.com",
     description="A library for market sentiment analysis of financial social media posts",
