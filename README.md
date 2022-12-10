@@ -19,6 +19,12 @@ Therefore, ...
 - If you are looking for a sentiment analysis models that excels on new headlines sentiment analysis, check out [FinBERT](https://huggingface.co/ProsusAI/finbert)
 - Otherwise, stay here 🙃
 
+## Installation
+It's as easy as...
+```bash
+pip install pyfin-sentiment
+```
+
 ## Documentation
 > 📚 The documentation lives on [pyfin-sentiment.readthedocs.io](https://pyfin-sentiment.readthedocs.io/en/latest)
 
