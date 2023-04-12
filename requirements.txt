@@ -4,4 +4,4 @@ isort
 toml
 joblib
 scikit-learn
-polars
+polars==0.12.0
