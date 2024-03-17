@@ -25,7 +25,7 @@ class Preprocessor:
         self.multi_spaces = multi_spaces
 
     def fix_symbols(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(
+        return df.with_columns(
             pl.col(self.TEXTCOL)
             .str.replace_all(r"&gt;", ">")
             .str.replace_all(r"&lt;", "<")
@@ -33,26 +33,26 @@ class Preprocessor:
         )
 
     def prep_numbers(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(pl.col(self.TEXTCOL).str.replace_all(r"\d", "9"))
+        return df.with_columns(pl.col(self.TEXTCOL).str.replace_all(r"\d", "9"))
 
     def prep_cashtags(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(
+        return df.with_columns(
             pl.col(self.TEXTCOL).str.replace_all(self.CASHTAG_REGEX, "TICKER")
         )
 
     def prep_mentions(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(
+        return df.with_columns(
             pl.col(self.TEXTCOL).str.replace_all(self.MENTION_REGEX, "@USER")
         )
 
     def prep_lowercase(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(pl.col(self.TEXTCOL).str.to_lowercase())
+        return df.with_columns(pl.col(self.TEXTCOL).str.to_lowercase())
 
     def prep_newlines(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(pl.col(self.TEXTCOL).str.replace_all("\n", " "))
+        return df.with_columns(pl.col(self.TEXTCOL).str.replace_all("\n", " "))
 
     def prep_multi_spaces(self, df: pl.DataFrame) -> pl.DataFrame:
-        return df.with_column(pl.col(self.TEXTCOL).str.replace_all(r"\s+", " "))
+        return df.with_columns(pl.col(self.TEXTCOL).str.replace_all(r"\s+", " "))
 
     def process(self, df: pl.DataFrame) -> pl.DataFrame:
         if self.symbols:

@@ -137,7 +137,7 @@ class SentimentModel:
         if len(texts) == 0:
             raise ValueError(f"Please provide at least one text. Got {texts}")
 
-        df = pl.DataFrame(texts, columns=["text"])
+        df = pl.DataFrame(texts, schema=["text"])
         df = self.preprocessor.process(df)
 
         return self.model.predict(df["text"].to_list())
@@ -157,7 +157,7 @@ class SentimentModel:
                 f"Please provide a list or np.ndarray of texts. Got {type(texts)}."
             )
 
-        df = pl.DataFrame(texts, columns=["text"])
+        df = pl.DataFrame(texts, schema=["text"])
         df = self.preprocessor.process(df)
 
         return self.model.predict_proba(df["text"].to_list())
